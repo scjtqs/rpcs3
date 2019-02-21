@@ -15,7 +15,7 @@ namespace rsx
 	{
 		// 'fake' initialize usermemory
 		// todo: seriously, need to probly watch the replay memory map and just make sure its mapped before we copy rather than do this
-		user_mem_addr = vm::falloc(vm::get(vm::user1m)->addr, 0x10000000);
+		user_mem_addr = vm::falloc(vm::get(vm::user64k)->addr, 0x10000000);
 		verify(HERE), user_mem_addr != 0;
 
 		const u32 contextAddr = vm::alloc(sizeof(rsx_context), vm::main);
